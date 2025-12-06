@@ -1,3 +1,10 @@
+/* =========================================
+   IMPORT FONTS - THÊM PHÔNG CHỮ GIÁNG SINH
+   ========================================= */
+/* Nhúng phông Mountains of Christmas cho tiêu đề */
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
+/* Giữ lại Lato cho văn bản thường để dễ đọc */
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -63,56 +70,109 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-a {
-  color: #1772d0;
-  text-decoration: none;
-}
+/* =========================================
+   GLOBAL STYLES - MÀU SẮC & NỀN
+   ========================================= */
 
-a:focus,
-a:hover {
-  color: #f09228;
-  text-decoration: none;
-}
-
-body,
-td,
-th,
-tr,
-p,
-a {
+body {
+  /* Nền màu kem tuyết nhẹ nhàng */
+  background-color: #f8faff; 
+  /* Màu chữ chính chuyển sang xanh lá đậm (Forest Green) */
+  color: #0f4d28;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
+}
+
+/* Tạo hiệu ứng khung thẻ bài cho bảng chính */
+body > table {
+    background-color: #ffffff;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    padding: 25px;
+    border-radius: 20px; /* Bo tròn góc */
+    /* Đổ bóng nhẹ màu xanh rêu */
+    box-shadow: 0 10px 30px rgba(15, 77, 40, 0.15); 
+    /* Viền trên màu đỏ như kẹo gậy */
+    border-top: 6px solid #d42426;
+}
+
+td, th, tr, p {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/* Links - Màu đỏ Giáng sinh */
+a {
+  color: #d42426;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Link Hover - Màu vàng kim loại phát sáng */
+a:focus,
+a:hover {
+  color: #f0a500;
+  text-decoration: none;
+  /* Hiệu ứng phát sáng nhẹ khi di chuột */
+  text-shadow: 0 0 8px rgba(240, 165, 0, 0.6);
 }
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
+  color: #d42426; /* Nhấn mạnh bằng màu đỏ */
+}
+
+/* =========================================
+   TYPOGRAPHY & HEADINGS - TIÊU ĐỀ LỄ HỘI
+   ========================================= */
+
+/* Sử dụng phông chữ Giáng sinh cho các tiêu đề */
+h2, .name, .papertitle {
+    font-family: 'Mountains of Christmas', cursive;
 }
 
 h2 {
-  margin: 0;
-  font-weight: normal;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  font-size: 28px; /* Tăng kích thước */
+  color: #d42426; /* Màu đỏ */
+  /* Gạch chân nét đứt trang trí */
+  border-bottom: 3px dashed #0f4d28; 
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 .papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .name {
   padding-top: 20px;
   margin: 0;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 42px; /* Tên to hơn nữa */
+  font-weight: 700;
+  color: #d42426;
+  /* Đổ bóng chữ tạo chiều sâu */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
+
+/* =========================================
+   COMPONENTS & EFFECTS
+   ========================================= */
 
 .one {
   width: 160px;
   height: 160px;
   position: relative;
+  /* Thêm viền ảnh tròn và đổ bóng */
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border: 3px solid #fff;
+  overflow: hidden; /* Đảm bảo ảnh không bị tràn ra khỏi khung tròn */
 }
 
 .two {
@@ -130,13 +190,36 @@ h2 {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
+/* Highlight - Nền vàng ấm áp viền đỏ */
 span.highlight {
-  background-color: #ffffd0;
+  background-color: #fff5d7;
+  color: #d42426;
+  border-radius: 6px;
+  padding: 2px 6px;
+  border: 1px solid #f0a500;
 }
 
+/* Colored Box - Hộp quà xanh lá */
 .colored-box {
-    color: black;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 10px;
+  color: #ffffff; /* Chữ trắng trên nền xanh */
+  background-color: #1a6e45; /* Nền xanh lá đậm */
+  padding: 25px;
+  display: inline-block;
+  border-radius: 15px;
+  /* Viền đỏ như dây ruy băng */
+  border: 3px solid #d42426;
+  box-shadow: 0 8px 20px rgba(26, 110, 69, 0.3);
+  position: relative;
+}
+
+/* Thêm hiệu ứng bo tròn cho ảnh đại diện (nếu có class hoverZoomLink) */
+img.hoverZoomLink {
+    border-radius: 50%;
+    border: 4px solid #d42426; /* Viền đỏ cho avatar */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+img.hoverZoomLink:hover {
+    transform: scale(1.05) rotate(3deg); /* Hiệu ứng lắc nhẹ khi hover */
 }
